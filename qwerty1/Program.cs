@@ -1,2 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк,
+// длина которых меньше, либо равна 3 символам.
+// Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма.
+// При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
+
+
+string[] arrayInput = new string[5] { "трололо", "бее", "hello", "world", "бу" };
+string[] arrayOutput = new string[0];
+ Console.Write("Дано: ");
+    for (int i = 0; i < arrayInput.Length; i++)
+        Console.Write($"'{arrayInput[i]}' ");
+    for (int i = 0; i < arrayInput.Length; i++)
+      {
+       if (arrayInput[i].Length < 4)
+        {
+         Array.Resize(ref arrayOutput, arrayOutput.Length + 1);
+         arrayOutput[arrayOutput.Length - 1] = arrayInput[i];
+        }
+      }
+ Console.WriteLine("Ищем элементы массива <= 3 символам: ");
+ Console.Write("Результат: ");
+ for (int i = 0; i < arrayOutput.Length; i++)
+   Console.Write($"'{arrayOutput[i]}' ");
+ Console.ReadLine();
